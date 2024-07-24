@@ -40,5 +40,7 @@ std::shared_ptr<Layer> SigmoidLayer::CreateInstance(const std::shared_ptr<Operat
   return sigmoid_layer;
 }
 // OpType::kOperatorRelu 自己替换掉,换成sigmoid对应类型
+LayerRegistererWrapper kSigmoidLayer(OpType::kOperatorSigmoid, SigmoidLayer::CreateInstance);
+
 //LayerRegistererWrapper kReluLayer1(OpType::kOperatorRelu, SigmoidLayer::CreateInstance);
 }
